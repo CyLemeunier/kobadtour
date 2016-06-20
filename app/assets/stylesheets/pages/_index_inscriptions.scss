@@ -1,0 +1,28 @@
+#wrapper_index {
+  background-color: $gray-lighter;
+}
+
+.joueur_paire {
+  border-bottom: 1px solid #183152;
+}
+
+.card-tableau {
+  background-color: white;
+  margin-bottom: 30px;
+  padding: 15px;
+}
+
+.flexbox {
+  display : flex;
+  justify-content: space-around;
+  margin: 25px 0 15px 0;
+}
+
+.minhotfix {
+   min-height: 0;
+   min-width: 0;
+}
+
+.no_display {
+  display: none;
+}

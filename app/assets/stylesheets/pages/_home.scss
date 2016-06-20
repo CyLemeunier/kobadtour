@@ -2,3 +2,35 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+
+#signature_droite {
+  text-align: right;
+}
+
+#container_infos {
+  min-height: 200px;
+}
+
+.wrapper {
+  background-color: $gray-lighter;
+  padding-top: 40px;
+  margin-top: 20px;
+}
+
+.fontawesome_home {
+  text-align: center;
+  position: relative;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+}
+
+.min-height {
+  min-height: 500px;
+}
+
+.link_home:hover {
+  text-decoration: none;
+}

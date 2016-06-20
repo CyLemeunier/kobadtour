@@ -1,2 +1,42 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= render 'shared/banner' %>
+<div class="container" class="min-height">
+
+  <h1>Bienvenue</h1>
+  </br>
+  <p>Toute l'équipe du Maure Badminton Club est heureux de vous accueillir pour
+  cette 5ème édition du Tournoi National de Badminton de Maure.</p>
+  <p>Vous trouverez sur ce site toutes les informations utiles, le formulaire
+  d'inscription ainsi que la liste des inscrits. Les convocations seront disponibles
+  dès que le tirage au sort aura été effectué par le Juge-Arbitre principal.</p>
+  <p>Si vous aviez encore des questions n'hésitez pas à nous contacter à <a href="mailto:tournoismbc@gmail.com">tournoismbc@gmail.com</a></p>
+
+  <h4 id="signature_droite">Samuel HOCHARD, président</h2>
+</div>
+
+<div class="wrapper">
+  <div class="container" id="container_infos">
+    <div class="row col-xs-12 col-sm-6 col-md-3 fontawesome_home">
+      <%= link_to '/informations', { :class => "link_home" } do %>
+        <i class="fa fa-info-circle fa-4x fa-border" aria-hidden="true"></i>
+        <h3>Informations</h3>
+      <% end %>
+    </div>
+    <div class="row col-xs-12 col-sm-6 col-md-3 fontawesome_home">
+      <%= link_to new_inscription_path(@inscription), { :class => "link_home" } do %>
+        <i class="fa fa-user-plus fa-4x fa-border" aria-hidden="true"></i>
+        <h3>Inscription</h3>
+      <% end %>
+    </div>
+    <div class="row col-xs-12 col-sm-6 col-md-3 fontawesome_home">
+      <%= link_to inscriptions_path, { :class => "link_home" } do %>
+        <i class="fa fa-file-text-o fa-4x fa-border" aria-hidden="true"></i>
+        <h3>Liste des inscrits</h3>
+      <% end %>
+    </div>
+    <div class="row col-xs-12 col-sm-6 col-md-3 fontawesome_home">
+      <i class="fa fa-clock-o fa-4x fa-border" aria-hidden="true"></i>
+      <h3>Convocations</h3>
+      <h4>(à venir)</h4>
+    </div>
+  </div>
+</div>

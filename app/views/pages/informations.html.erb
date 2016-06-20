@@ -1,0 +1,204 @@
+<div class="container text-center">
+  <h1>TOURNOI NATIONAL SENIOR</h1>
+  <h2>Tableaux SH - SD - DH - DD - DM  /  Séries N2 à D9</h2>
+  <p>N°autorisation : 15.BRE.35/TI.F./006 </p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <!-- Partie compétition et inscriptions -->
+    <div class="col-xs-12 col-sm-6">
+      <div class="titre_informations">
+        Compétition et inscriptions
+      </div>
+      <div class="text-center">
+        <p><strong><u>Accueil / Pointage</u></strong>
+        </br>
+        Samedi 25 juin à partir de 8 h 30
+        </br>
+        (dans les 2 gymnases de Maure-de-Bretagne et Mernel)</p>
+        <p><strong><u>Début des tableaux</u></strong>
+        </br>
+        Simples : samedi matin / Mixtes : samedi après-midi
+        </br>
+        Doubles : dimanche matin
+        </br>
+        Finales (tous tableaux) / Remise des récompenses : dimanche 26 juin à partir de 12h 00</p>
+        <p>Aucune inscription par mail / téléphone. Toutes les inscriptions doivent obligatoirement passer par ce site.</p>
+      </div>
+    </div>
+    <!-- Partie échéancier -->
+    <div class="col-xs-12 col-sm-6">
+      <div class="titre_informations">
+        Echéancier
+      </div>
+      <div class="text-center">
+        <p><strong><u>Juges - Arbitres</u></strong>
+        </br>
+        Jean-Charles ROUILLEE et Natacha BOULAIS</p>
+        <p><strong><u>Tarifs</u></strong>
+        </br>
+        10€ (1 tableau) / 15€ (2 tableaux)</p>
+        <p><i class="fa fa-exclamation-triangle fa-2x" aria-hidden="true"></i> L’organisateur se laisse la possibilité de répartir les joueurs et les joueuses en
+        tableaux où le CPPH sera le critère de répartition et non plus la série du classement. Dans ce cas,
+        un tableau sera constitué de joueurs, joueuses ou paires ayant un CPPH proche.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="container">
+      <div class="titre_informations">
+        Salles
+      </div>
+      <div class="col-xs-12 col-sm-6 text-center">
+        Complexe Sportif Calypso
+        </br>
+        4 Rue des Petites Ecuries
+        </br>
+        35330 MAURE DE BRETAGNE
+      </div>
+      <div class="col-xs-12 col-sm-6 text-center">
+        Complexe Sportif de Mernel
+        </br>
+        Rue du stade
+        </br>
+        35330 MERNEL
+      </div>
+      <div id="map" style="width: 100%; height: 300px;"></div>
+        <% content_for(:after_js) do %>
+          <script>
+            $(document).on('ready', function() {
+              handler = Gmaps.build('Google');
+              handler.buildMap({ internal: { id: 'map' } }, function(){
+                markers = handler.addMarkers([
+                  {
+                    "lat": 47.8910320,
+                    "lng": -1.9866860,
+                    "infowindow": "Complexe Sportif Calypso n°1 (Maure)"
+                  },
+                  {
+                    "lat": 47.8960740,
+                    "lng": -1.9662820,
+                    "infowindow": "Complexe Sportif n°2 (Mernel)"
+                  }
+                ]);
+                handler.bounds.extendWith(markers);
+                handler.fitMapToBounds();
+              });
+            })
+          </script>
+        <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <!-- Partie Récompenses -->
+      <div class="titre_informations">
+        Récompenses
+      </div>
+      <div class="text-center">
+        <p>Les vainqueurs et les finalistes seront récompensés par des chèques et un panier gourmand</p>
+        <%= image_tag "recompenses.png", width: '555' %>
+        <span style="font-size: 12px;">
+        * L’organisateur se laisse la possibilité de répartir les joueurs et les joueuses en
+        tableaux où le CPPH sera le critère de répartition et non plus la série du classement. Dans ce cas, un tableau sera constitué de joueurs, joueuses ou paires ayant un CPPH proche.</span>
+      </div>
+
+      <!-- Partie contacts -->
+      <div class="titre_informations">
+        Contacts
+      </div>
+      <div class="text-center">
+        Samuel HOCHARD
+        </br>
+        06.79.10.28.71
+        </br>
+        </br>
+        <a href="mailto:tournoismbc@gmail.com" class="link_home">tournoismbc@gmail.com</a>
+        </br>
+        </br>
+        Anne-Laure GUEHENNEUC
+        </br>
+        06.24.99.25.57
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+
+      <!-- Partie restauration -->
+      <div class="titre_informations">
+        Restauration
+      </div>
+      <div class="text-center">
+        <p><strong><u>Buvette</u></strong>
+        </br>
+        galettes-saucisses, sandwichs, croque-monsieurs, hot-dog, salades, boissons chaudes ou
+        fraîches, gâteaux, friandises...</p>
+        <p style="color: red;"><strong><u>Repas samedi soir</u></strong>
+        </br>
+        Buffet froid : salades d’entrée – viande - boissons comprises
+        </br>
+        Tarif : 12 € / personne</p>
+        <p>Si vous souhaitez y participer, vous devez l’indiquer sur votre feuille d’inscription.
+        Inscriptions possibles pour le repas jusqu’au mardi précédant le tournoi</p>
+      </div>
+
+      <!-- Partie Hébergement -->
+      <div class="titre_informations">
+        Hébergement
+      </div>
+      <div class="text-center">
+        <p>Hébergement possible à Guer ou Lohéac, 10 minutes de Maure.
+        </br>
+        Hébergement sur Redon ou Rennes, prévoir une demie-heure de route jusqu’à Maure.</p>
+      </div>
+
+      <!-- Partie convocations -->
+      <div class="titre_informations">
+        Convocations
+      </div>
+      <div class="text-center">
+        <p><strong><u>Tirage au sort </u></strong>
+        </br>
+        19 juin 2016</p>
+        </br>
+        <p>Les joueurs forfaits après le tirage au sort ne seront pas remboursés</p>
+        <p>Les convocations seront diffusées par mail à partir du mercredi 22 juin et seront également disponibles sur ce site</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Partie basse -->
+  <div style="margin-bottom: 20px;">
+    <div class="row">
+
+
+
+
+
+      <div class="col-xs-12">
+
+      </div>
+      <!-- Partie partenaires -->
+      <div class="col-xs-12">
+        <div class="titre_informations">
+          Partenaires
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 text-center">
+            <%= image_tag "castorama.png" %>
+          </div>
+          <div class="col-xs-12 col-sm-4 text-center">
+            <%= image_tag "sport2000.png" %>
+          </div>
+          <div class="col-xs-12 col-sm-4 text-center">
+            <%= image_tag "solibad.jpg", width: '200' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

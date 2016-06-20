@@ -1,0 +1,83 @@
+<div class="card-tableau">
+  <div>
+    <h4><%= hash[:name] %></h4>
+  </div>
+  <table class="table table-striped">
+      <tr>
+        <th></th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Club</th>
+        <th>Paiement</th>
+        <% if current_user %>
+          <th>Licence</th>
+          <th>Infos</th>
+        <% end %>
+      </tr>
+    <% if hash[:array].empty? %>
+      <div style="margin-bottom: 15px;">
+        <i class="fa fa-times" aria-hidden="true" style="color: red;"></i> Pas d'inscrit pour le moment
+      </div>
+    <% else %>
+      <% hash[:array].each_with_index do |inscrit, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td>
+            <%= inscrit.nom_joueur1.upcase %>
+            </br>
+            <%= inscrit.nom_joueur2.upcase %>
+          </td>
+          <td>
+            <%= inscrit.prenom_joueur1.capitalize %>
+            </br>
+            <%= inscrit.prenom_joueur2.capitalize %>
+          </td>
+          <td>
+            <%= inscrit.club_joueur1 %>
+            </br>
+            <%= inscrit.club_joueur2 %>
+          </td>
+          <td>
+            <div>
+              <span id="paiement_joueur1_<%= inscrit.id %>"><%= inscrit.paiement_joueur1 %></span>
+              <% if current_user %>
+                - <%= link_to update_paiement_inscription_path(inscrit), method: :post, remote: true do %>
+                  <i class="fa fa-eur" aria-hidden="true"></i>
+                <% end %>
+                - <%= link_to downdate_paiement_inscription_path(inscrit), method: :post, remote: true do %>
+                  <i class="fa fa-ban" aria-hidden="true"></i>
+                <% end %>
+              <% end %>
+            </div>
+            <div>
+              <span id="paiement_joueur2_<%= inscrit.id %>"><%= inscrit.paiement_joueur2 %></span>
+              <% if current_user %>
+                - <%= link_to update_paiement2_inscription_path(inscrit), method: :post, remote: true do %>
+                  <i class="fa fa-eur" aria-hidden="true"></i>
+                <% end %>
+                - <%= link_to downdate_paiement2_inscription_path(inscrit), method: :post, remote: true do %>
+                  <i class="fa fa-ban" aria-hidden="true"></i>
+                <% end %>
+            </div>
+          </td>
+            <td>
+              <%= inscrit.licence_joueur1 %>
+              </br>
+              <%= inscrit.licence_joueur2 %>
+            </td>
+            <td>
+              <span style="font-size: 10px;">Resp. : <%= inscrit.responsable %> - <%= inscrit.tel %></span>
+              - <a href="mailto:<%= inscrit.mail %>"><i class="fa fa-at" aria-hidden="true"></i></a>
+              - <%= link_to edit_inscription_path(inscrit) do %>
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+              <% end %>
+              - <%= link_to inscription_path(inscrit), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+              <% end %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+</div>

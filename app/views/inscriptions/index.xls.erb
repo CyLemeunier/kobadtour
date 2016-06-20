@@ -1,0 +1,177 @@
+<table>
+  <tr>
+    <th colspan="4">Simple Homme</th>
+  </tr>
+  <% @sh.each do |hash| %>
+    <% if hash[:array].any? %>
+      <tr></tr>
+      <tr>
+        <th></th>
+        <th>Serie</th>
+        <th>Nom Prenom</th>
+        <th>Licence</th>
+        <th>Club</th>
+        <th>Paiement</th>
+        <th></th>
+      </tr>
+        <% hash[:array].each_with_index do |inscription, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= inscription.serie %></td>
+          <td><%= inscription.nom_joueur1 %> <%= inscription.prenom_joueur1 %></td>
+          <td><%= inscription.licence_joueur1 %></td>
+          <td><%= inscription.club_joueur1 %></td>
+          <td><%= inscription.paiement_joueur1 %></td>
+          <td><%= inscription.mail %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  <% end %>
+  <tr></tr>
+  <tr></tr>
+  <tr>
+    <th colspan="4">Simple Dame</th>
+  </tr>
+  <% @sd.each do |hash| %>
+    <% if hash[:array].any? %>
+      <tr></tr>
+      <tr>
+        <th></th>
+        <th>Serie</th>
+        <th>Nom Prenom</th>
+        <th>Licence</th>
+        <th>Club</th>
+        <th>Paiement</th>
+        <th></th>
+      </tr>
+        <% hash[:array].each_with_index do |inscription, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= inscription.serie %></td>
+          <td><%= inscription.nom_joueur1 %> <%= inscription.prenom_joueur1 %></td>
+          <td><%= inscription.licence_joueur1 %></td>
+          <td><%= inscription.club_joueur1 %></td>
+          <td><%= inscription.paiement_joueur1 %></td>
+          <td><%= inscription.mail %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  <% end %>
+  <tr></tr>
+  <tr></tr>
+  <tr>
+    <th colspan="4">Double Homme</th>
+  </tr>
+  <% @dh.each do |hash| %>
+    <% if hash[:array].any? %>
+      <tr></tr>
+      <tr>
+        <th></th>
+        <th>Serie</th>
+        <th>Nom Prenom</th>
+        <th>Licence</th>
+        <th>Club</th>
+        <th>Paiement</th>
+        <th></th>
+      </tr>
+        <% hash[:array].each_with_index do |inscription, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= inscription.serie %></td>
+          <td><%= inscription.nom_joueur1 %> <%= inscription.prenom_joueur1 %></td>
+          <td><%= inscription.licence_joueur1 %></td>
+          <td><%= inscription.club_joueur1 %></td>
+          <td><%= inscription.paiement_joueur1 %></td>
+          <td><%= inscription.mail %></td>
+        </tr>
+        <tr>
+        <td></td>
+        <td></td>
+        <td><%= inscription.nom_joueur2 %> <%= inscription.prenom_joueur2 %></td>
+        <td><%= inscription.licence_joueur2 %></td>
+        <td><%= inscription.club_joueur2 %></td>
+        <td><%= inscription.paiement_joueur2 %></td>
+        <td><%= inscription.mail %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  <% end %>
+  <tr></tr>
+  <tr></tr>
+  <tr>
+    <th colspan="4">Double Dame</th>
+  </tr>
+  <% @dd.each do |hash| %>
+    <% if hash[:array].any? %>
+      <tr></tr>
+      <tr>
+        <th></th>
+        <th>Serie</th>
+        <th>Nom Prenom</th>
+        <th>Licence</th>
+        <th>Club</th>
+        <th>Paiement</th>
+        <th></th>
+      </tr>
+        <% hash[:array].each_with_index do |inscription, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= inscription.serie %></td>
+          <td><%= inscription.nom_joueur1 %> <%= inscription.prenom_joueur1 %></td>
+          <td><%= inscription.licence_joueur1 %></td>
+          <td><%= inscription.club_joueur1 %></td>
+          <td><%= inscription.paiement_joueur1 %></td>
+          <td><%= inscription.mail %></td>
+        </tr>
+        <tr>
+        <td></td>
+        <td></td>
+        <td><%= inscription.nom_joueur2 %> <%= inscription.prenom_joueur2 %></td>
+        <td><%= inscription.licence_joueur2 %></td>
+        <td><%= inscription.club_joueur2 %></td>
+        <td><%= inscription.paiement_joueur2 %></td>
+        <td><%= inscription.mail %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  <% end %>
+  <tr></tr>
+  <tr></tr>
+  <tr>
+    <th colspan="4">Double Mixte</th>
+  </tr>
+  <% @dm.each do |hash| %>
+    <% if hash[:array].any? %>
+      <tr></tr>
+      <tr>
+        <th></th>
+        <th>Serie</th>
+        <th>Nom Prenom</th>
+        <th>Licence</th>
+        <th>Club</th>
+        <th>Paiement</th>
+        <th></th>
+      </tr>
+        <% hash[:array].each_with_index do |inscription, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= inscription.serie %></td>
+          <td><%= inscription.nom_joueur1 %> <%= inscription.prenom_joueur1 %></td>
+          <td><%= inscription.licence_joueur1 %></td>
+          <td><%= inscription.club_joueur1 %></td>
+          <td><%= inscription.paiement_joueur1 %></td>
+          <td><%= inscription.mail %></td>
+        </tr>
+        <tr>
+        <td></td>
+        <td></td>
+        <td><%= inscription.nom_joueur2 %> <%= inscription.prenom_joueur2 %></td>
+        <td><%= inscription.licence_joueur2 %></td>
+        <td><%= inscription.club_joueur2 %></td>
+        <td><%= inscription.paiement_joueur2 %></td>
+        <td><%= inscription.mail %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  <% end %>
+</table>

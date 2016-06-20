@@ -1,0 +1,65 @@
+<div class="container text-center">
+  <div>
+    <h3>N'oubliez pas si vous venez d'effectuer une inscription :</h3>
+    <p>1) <strong>Remplissez la <%= link_to "fiche d'inscription (clic)", asset_path("Inscription_MBC_NRD.xls") %></strong> qui récapitule la ou les inscriptions que vous venez d'effectuer </p>
+    <p>2) <strong>Envoyer la fiche d'inscription et le règlement</strong> à l’ordre du Maure Badminton Club <u>avant le Mercredi 15 juin 2016</u> à :</p>
+  </div>
+  <h1>Liste des inscrits</h1>
+  <select name="select" id="select_tableau">
+    <option value="" selected></option>
+    <option value="simple homme">Simple Homme</option>
+    <option value="simple dame">Simple Dame</option>
+    <option value="double homme">Double Homme</option>
+    <option value="double dame">Double Dame</option>
+    <option value="double mixte">Double Mixte</option>
+  </select>
+  <% if current_user %>
+    <%= link_to "Télécharger en Excel", inscriptions_path(format: "xls"), class: "link_home" %>
+  <% end %>
+</div>
+
+<div class="wrapper" id="wrapper_index">
+  <div class="container min-height">
+
+  <!-- Simple Homme -->
+    <div class="no_display" id="simplehomme">
+      <div class="row">
+        <% @sh.each do |hash| %>
+          <%= render 'inscription', hash: hash %>
+        <% end %>
+      </div>
+    </div>
+  <!-- Simple Dame -->
+    <div class="no_display" id="simpledame">
+      <div class="row">
+        <% @sd.each do |hash| %>
+          <%= render 'inscription', hash: hash %>
+        <% end %>
+      </div>
+    </div>
+  <!-- Double Homme -->
+    <div class="no_display" id="doublehomme">
+      <div class="row">
+        <% @dh.each do |hash| %>
+          <%= render 'inscription_double', hash: hash %>
+        <% end %>
+      </div>
+    </div>
+  <!-- Double Dame -->
+    <div class="no_display" id="doubledame">
+      <div class="row">
+        <% @dd.each do |hash| %>
+          <%= render 'inscription_double', hash: hash %>
+        <% end %>
+      </div>
+    </div>
+  <!-- Double Mixte -->
+    <div class="no_display" id="doublemixte">
+      <div class="row">
+        <% @dm.each do |hash| %>
+          <%= render 'inscription_double', hash: hash %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

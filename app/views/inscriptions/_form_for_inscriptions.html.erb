@@ -1,0 +1,32 @@
+<div class="container min-height">
+  <div class="row col-xs-12 col-sm-4 col-sm-offset-4">
+    <%= simple_form_for @inscription do |i| %>
+      <%= i.input :responsable %>
+      <%= i.input :mail %>
+      <%= i.input :tel %>
+      <%= i.input :tableau, collection: TABLEAUX %>
+      <%= i.input :serie, collection: SERIES %>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6" id="joueur1" style="display:none">
+      <p class="joueur">Joueur 1</p>
+      <%= i.input :nom_joueur1, label: "Nom" %>
+      <%= i.input :prenom_joueur1, label: "Prénom" %>
+      <%= i.input :licence_joueur1, label: "Licence" %>
+      <%= i.input :club_joueur1, label: "Club" %>
+      <%= i.input :paiement_joueur1, as: :hidden, :input_html => { :value => "En attente de paiement" } %>
+    </div>
+    <div class="col-xs-12 col-sm-6" id="joueur2" style="display:none">
+      <p class="joueur">Joueur 2</p>
+      <%= i.input :nom_joueur2, label: "Nom" %>
+      <%= i.input :prenom_joueur2, label: "Prénom" %>
+      <%= i.input :licence_joueur2, label: "Licence"  %>
+      <%= i.input :club_joueur2, label: "Club" %>
+      <%= i.input :paiement_joueur2, as: :hidden, :input_html => { :value => "En attente de paiement" } %>
+    </div>
+  </div>
+ <div class="row" style="text-align: center;">
+    <%= i.button :submit %>
+    <% end %>
+  </div>
+</div>
